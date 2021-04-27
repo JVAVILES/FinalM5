@@ -34,7 +34,7 @@
 					<td><c:out value="${cap.getCapLugar()}"></c:out></td>
 					<td><c:out value="${cap.getCapDuracion()}"></c:out></td>
 					<td><c:out value="${cap.getCapCantidadAsistentes()}"></c:out></td>
-					<td><c:out value="${cap.getCapClienteRutcliente()}"></c:out></td>
+					<td><c:out value="${cap.getCapClienteRutCliente()}"></c:out></td>
 				</tr>
 				</c:forEach>
                 </tbody>

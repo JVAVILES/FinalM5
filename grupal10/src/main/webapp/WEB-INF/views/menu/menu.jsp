@@ -12,7 +12,7 @@
 
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="Inicio">Inicio</a>
+					<a class="nav-link" aria-current="page" href="/inicio">Inicio</a>
 				</li>
 					
 				<li class="nav-item">
@@ -26,7 +26,7 @@
 					
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<li><a class="dropdown-item" href="/capacitacion/crearCapacitacion">Crear Capacitaciones</a></li>
-						<li><a class="dropdown-item" href="CrearUsuario">Crear Usuario</a></li>
+						<li><a class="dropdown-item" href="/usuario/crearUsuario">Crear Usuario</a></li>
 					</ul>
 				</li>
 				
@@ -38,7 +38,7 @@
 					
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<li><a class="dropdown-item" href="/capacitacion/">Listar Capacitaciones</a></li>
-						<li><a class="dropdown-item" href="ListadoUsuarios">Listado de Usuarios</a></li>
+						<li><a class="dropdown-item" href="/usuario/">Listado de Usuarios</a></li>
 						
 					</ul>
 				</li>

@@ -1,8 +1,8 @@
 package cl.modulo.sesion7.entity;
 
-import javax.persistence.DiscriminatorValue;
+
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,13 +11,12 @@ import lombok.ToString;
 
 @Setter
 @Getter
-@ToString
 @NoArgsConstructor
+@ToString
 @Entity
-@DiscriminatorValue("3")  
+@PrimaryKeyJoinColumn(name="userRun")
 public class Administrativo extends Usuario {
 	
-	@Id
 	private String admCorreo;
 	private String admArea;
 	

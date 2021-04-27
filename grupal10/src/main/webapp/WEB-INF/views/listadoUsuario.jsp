@@ -16,11 +16,10 @@
             <table class="contenido-centrar listado">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Rut</th>
                         <th>Nombre</th>
                         <th>Apellidos</th>
                         <th>Fecha de Nacimiento</th>
-                        <th>Rut</th>
                         <th>Role</th>
                         
                         <th>Eliminar</th>
@@ -30,17 +29,17 @@
                 <tbody>
             	 	<c:forEach items="${listaUsuarios}" var="usu">
 						<tr>
-							<td><c:out value="${usu.getIdUsuario()}"></c:out></td>
+							<td><c:out value="${usu.getUserRun()}"></c:out></td>
 							<td><c:out value="${usu.getUserNombre()}"></c:out></td>
 							<td><c:out value="${usu.getUserApellido()}"></c:out></td>
 							<td><c:out value="${usu.getUserFeNaci()}"></c:out></td>
-							<td><c:out value="${usu.getUserRun()}"></c:out></td>
 							<td><c:out value="${usu.getTipoUsuario()}"></c:out></td>
 							
-							<td><a href="EliminarUsuario?RutUsuario=<c:out value="${usu.getUserRun()}"></c:out>"><img src="https://cdn.icon-icons.com/icons2/55/PNG/128/editDelete_11203.png"
+							<td><a href="EliminarUsuario?IdUsuario=<c:out value="${usu.getUserRun()}"></c:out>">
+										<img src="https://cdn.icon-icons.com/icons2/55/PNG/128/editDelete_11203.png"
 	                                    width="30px"></a></td>
-	                        <td><a href="MostrarUsuario?RutUsuario=<c:out value="${usu.getUserRun()}"></c:out>"><img
-	                                    src="https://cdn.icon-icons.com/icons2/402/PNG/128/edit-validated_40458.png"
+	                        <td><a href="/<c:out value="${usu.getTipoUsuario()}"></c:out>/idUsuario/<c:out value="${usu.getUserRun()}"></c:out>">
+	                        <img src="https://cdn.icon-icons.com/icons2/402/PNG/128/edit-validated_40458.png"
 	                                    width="30px"></a></td>
 						</tr>
 					</c:forEach>

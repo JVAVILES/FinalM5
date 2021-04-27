@@ -2,22 +2,18 @@ package cl.modulo.sesion7.entity;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Setter
 @Getter
 @ToString
 @NoArgsConstructor
 @Entity
-@DiscriminatorValue("2")  
 public class Profesional extends Usuario {
-
+	@PrimaryKeyJoinColumn(name="userRun")
+	private Integer userRun;
 	private String proTelefono;
 	private String proTitulo;
 	private String proProyecto;

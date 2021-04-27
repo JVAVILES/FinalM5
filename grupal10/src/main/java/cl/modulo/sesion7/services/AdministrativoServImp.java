@@ -25,7 +25,7 @@ public class AdministrativoServImp implements InterfaceGenerico<Administrativo, 
 
 	@Override
 	public Administrativo readId(Integer runAdm) {
-		return iAR.findByRunAdm(runAdm);
+		return iAR.findByUserRun(runAdm);
 	}
 
 	@Override

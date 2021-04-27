@@ -6,6 +6,6 @@ import cl.modulo.sesion7.entity.Administrativo;
 
 public interface IAdministrativoRepo extends JpaRepository<Administrativo, Integer> {
 	
-	public Administrativo findByRunAdm(Integer runAdm);
+	public Administrativo findByUserRun(Integer userRun);
 	
 }

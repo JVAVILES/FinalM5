@@ -20,13 +20,13 @@ public class ProfesionalImp implements InterfaceGenerico<Profesional, Integer>{
 	}
 
 	@Override
-	public Profesional crear(Profesional dato) {
-		return iPR.save(dato);
+	public Profesional crear(Profesional pro) {
+		return iPR.save(pro);
 	}
 
 	@Override
-	public Profesional readId(Integer rutProfesional) {
-		return iPR.findByRutProfesional(rutProfesional);
+	public Profesional readId(Integer userRun) {
+		return iPR.findByUserRun(userRun);
 	}
 
 	@Override

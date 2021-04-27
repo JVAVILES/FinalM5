@@ -1,8 +1,9 @@
-<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
-<%@page import="java.util.List"%>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
+
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="False"%>
 	
 <jsp:include page="head.jsp">
 	<jsp:param value="Contacto" name="titulo"/>
@@ -35,6 +36,18 @@
 					<input type="text" id="perfil" name="tipoUsuario" 
 							value='<c:out value="${datosUsuario.getTipoUsuario()}"></c:out>'>
 				</div>
+ 				<div id="profesional" class="label-input">
+					<h3>Datos de Profesional</h3>
+					<label for="protelefono" class="form-label">Telefono :</label>
+					<input type="text" id="protelefono" name="userTelefono" 
+							value='<c:out value="${datosUsuario.getUserTelefono()}"></c:out>'>
+					<label for="protitulo" class="form-label">Titulo :</label>
+					<input type="text" id="protitulo" name="userTitulo" 
+							value='<c:out value="${datosUsuario.getUserTitulo()}"></c:out>'>
+					<label for="proproyecto" class="form-label">Proyecto :</label>
+					<input type="text" id="proproyecto" name="userProyecto" 
+							value='<c:out value="${datosUsuario.getUserProyecto()}"></c:out>'>
+ 				</div>
 				<div class="label-input">
 					<label for="nose" class="form-label">(*) Datos obligatorios</label>
 					<input class="submit" type="submit" value="Modificar">

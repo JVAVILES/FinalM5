@@ -9,7 +9,7 @@ import cl.modulo.sesion7.entity.Profesional;
 import cl.modulo.sesion7.repository.IProfesionalRepo;
 
 @Service
-public class ProfesionalImp implements InterfaceGenerico<Profesional, Integer>{
+public class ProfesionalImp implements InterfaceGenerico<Profesional>{
 
 	@Autowired
 	IProfesionalRepo iPR;

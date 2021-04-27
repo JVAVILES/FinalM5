@@ -9,7 +9,7 @@ import cl.modulo.sesion7.entity.Usuario;
 import cl.modulo.sesion7.repository.IUsuarioRepo;
 
 @Service
-public class UsuarioServImp implements InterfaceGenerico<Usuario,Integer>{
+public class UsuarioServImp implements InterfaceGenerico<Usuario>{
 
 	@Autowired
 	IUsuarioRepo cr ;

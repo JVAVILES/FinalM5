@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 @Service
-public interface  InterfaceGenerico<T,ID>{
-	List<T> listar();
+public interface  InterfaceGenerico<T>{
+	public List<T> listar();
 	public T crear(T dato);
 	public T readId (Integer dato );
 	public T modificar(T dato );

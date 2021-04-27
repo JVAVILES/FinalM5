@@ -13,6 +13,7 @@ import cl.modulo.sesion7.entity.Capacitacion;
 import cl.modulo.sesion7.entity.Profesional;
 import cl.modulo.sesion7.entity.Usuario;
 import cl.modulo.sesion7.repository.IProfesionalRepo;
+import cl.modulo.sesion7.services.InterfaceGenerico;
 import cl.modulo.sesion7.services.ProfesionalImp;
 import cl.modulo.sesion7.services.UsuarioServImp;
 
@@ -20,34 +21,11 @@ import cl.modulo.sesion7.services.UsuarioServImp;
 @RequestMapping("/Profesional")
 public class ProfesionalCont {
 	
-	ProfesionalImp pI;
-	UsuarioServImp uSI;
+	InterfaceGenerico<Profesional> iP;
 	
-	@PostMapping("/crear")
-	public RedirectView crearUsuarioPost(@ModelAttribute("formUsuario") Profesional pro){
-		String tipoUser = pro.getTipoUsuario();
-		if(tipoUser=="1") {
-			pro.setTipoUsuario("Cliente");
-		}
-		if(tipoUser=="2") {
-			pro.setTipoUsuario("Profesional");
-		}
-		if(tipoUser=="3") {
-			pro.setTipoUsuario("Administrativo");
-		}
-		pI.crear(pro);
-		return new RedirectView("/usuario/");
-	}
-	
-	@GetMapping("/editar")
-	public String editar(@RequestParam("userRun") Integer userRun, ModelMap mM){
-		mM.put("datosUsuario", pI.readId(userRun));
-		return "editarProfesional";
-	}
-	@PostMapping("/editar")
+	/*@PostMapping("/editar")
 		public RedirectView crearPost(@ModelAttribute("formActualizarUsuario") Profesional pro){
-		uSI.crear(pro);
-		pI.crear(pro);
+		iP.crear(pro);
 		return new RedirectView("/Profesional/");
-		}
+		}*/
 }

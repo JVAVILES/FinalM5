@@ -8,7 +8,7 @@ import cl.modulo.sesion7.entity.Administrativo;
 import cl.modulo.sesion7.repository.IAdministrativoRepo;
 
 @Service
-public class AdministrativoServImp implements InterfaceGenerico<Administrativo, Integer>{
+public class AdministrativoServImp implements InterfaceGenerico<Administrativo>{
 	
 	@Autowired
 	IAdministrativoRepo iAR;

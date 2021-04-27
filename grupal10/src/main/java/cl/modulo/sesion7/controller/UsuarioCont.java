@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import cl.modulo.sesion7.entity.Administrativo;
 import cl.modulo.sesion7.entity.Capacitacion;
+import cl.modulo.sesion7.entity.Cliente;
 import cl.modulo.sesion7.entity.Profesional;
 import cl.modulo.sesion7.entity.Usuario;
 import cl.modulo.sesion7.services.AdministrativoServImp;
@@ -27,14 +28,14 @@ import cl.modulo.sesion7.services.UsuarioServImp;
 public class UsuarioCont {
 
 	@Autowired
-	UsuarioServImp uSI;
-    AdministrativoServImp aSI;
-	ProfesionalImp pI;
-	
+	InterfaceGenerico<Usuario> iGU;
+	InterfaceGenerico<Cliente> iGC;
+	InterfaceGenerico<Profesional> iGP;
+	InterfaceGenerico<Administrativo> iGA;
 
 	@GetMapping("/")
 	public String listar(ModelMap modelmap) {
-		List<Usuario> lista = uSI.listar();
+		List<Usuario> lista = iGU.listar();
 		modelmap.put("listaUsuarios", lista);
 		return "listadoUsuario";
 	} 
@@ -45,17 +46,15 @@ public class UsuarioCont {
 	}  
 
 	@PostMapping("/crearUsuario")
-	public RedirectView crearUsuarioPost(@ModelAttribute("FormCrearUsuario") Usuario usu, Profesional pro, Administrativo adm){
+	public RedirectView crearUsuarioPost(@ModelAttribute("FormCrearUsuario") Usuario usu,
+				Cliente cli, Profesional pro, Administrativo adm){
 		String tipoUser = usu.getTipoUsuario().toString();
 		if(tipoUser.equals("1")) {
-			usu.setTipoUsuario("Cliente");
+			iGC.crear(cli);
 		}else if(tipoUser.equals("2")) {
-			usu.setTipoUsuario("Profesional");
-			System.out.println(pro.toString());
-			pI.crear(pro);
+			iGP.crear(pro);
 		}else {
-			usu.setTipoUsuario("Administrativo");
-			aSI.crear(adm);
+			iGA.crear(adm);
 		}
 		return new RedirectView("/usuario/");
 	}
